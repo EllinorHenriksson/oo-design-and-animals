@@ -140,6 +140,8 @@ public class Planet {
 
   /**
    * Returns a string representing the planet.
+   *
+   * @return A string.
    */
   @Override
   public String toString() {
