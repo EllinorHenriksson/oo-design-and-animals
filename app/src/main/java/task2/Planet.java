@@ -1,5 +1,7 @@
 package task2;
 
+import java.util.ArrayList;
+
 /**
  * Represents a planet.
  */
@@ -9,13 +11,13 @@ public class Planet {
   private int noOfMoons;
   private int aphelion;
   private int perihelion;
+  private ArrayList<Moon> moons;
 
   /**
    * Initializing constructor.
    *
    * @param name       - The name.
    * @param position   - The position.
-   * @param noOfMoons  - The number of moons.
    * @param aphelion   - The aphelion.
    * @param perihelion - The perihelion.
    */
@@ -25,6 +27,7 @@ public class Planet {
     setNoOfMoons(noOfMoons);
     setAphelion(aphelion);
     setPerihelion(perihelion);
+    moons = new ArrayList<>();
   }
 
   /**
@@ -75,7 +78,7 @@ public class Planet {
   }
 
   /**
-   * Gets the number of moons of the planet.
+   * Gets the number of moons of the planet. N.B. Not the same as the length of 'moons'!
    *
    * @return The number of moons.
    */
@@ -84,7 +87,7 @@ public class Planet {
   }
 
   /**
-   * Sets the number of moons of the planet.
+   * Sets the number of moons of the planet. N.B. Not the same as the length of 'moons'!
    *
    * @param newCount - The number of moons (must be 0 or more, or 'noOfMoons' will
    *                 keep its original value).
@@ -141,6 +144,42 @@ public class Planet {
     } else {
       System.out.println("Invalid perihelion.");
     }
+  }
+
+  /**
+   * Adds a moon to the planet.
+   *
+   * @param newMoon - The moon (must be a unique object with a unique name).
+   */
+  public void addMoon(Moon newMoon) {
+    boolean isUnique = true;
+    for (Moon m : moons) {
+      if (m == newMoon || m.getName().equals(newMoon.getName())) {
+        isUnique = false;
+      }
+    }
+
+    if (isUnique) {
+      moons.add(newMoon);
+      noOfMoons = moons.size();
+    } else {
+      System.out.println("Moon already added to planet.");
+    }
+  }
+
+  /**
+   * Gets an array with copies of the Moon objects that the planet holds.
+   *
+   * @return The moon copies.
+   */
+  public Moon[] getMoons() {
+    Moon[] copy = new Moon[moons.size()];
+
+    for (int i = 0; i < moons.size(); i++) {
+      copy[i] = new Moon(moons.get(i).getName(), moons.get(i).getSizeInKm());
+    }
+
+    return copy;
   }
 
   /**
