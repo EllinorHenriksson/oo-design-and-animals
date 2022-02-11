@@ -1,4 +1,4 @@
-package aSinglePlanet;
+package task2;
 
 /**
  * Represents a planet.

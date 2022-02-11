@@ -1,4 +1,4 @@
-package planetsWithMoons;
+package task1;
 
 /**
  * Represents a planet.
@@ -141,19 +141,5 @@ public class Planet {
     } else {
       System.out.println("Invalid perihelion.");
     }
-  }
-
-  /**
-   * Returns a string representing the planet.
-   *
-   * @return A string.
-   */
-  @Override
-  public String toString() {
-    return name
-        + ":\n  Position: " + position
-        + "\n  Moons: " + noOfMoons
-        + "\n  Aphelion: " + aphelion + " km"
-        + "\n  Perihelion: " + perihelion + " km";
   }
 }
