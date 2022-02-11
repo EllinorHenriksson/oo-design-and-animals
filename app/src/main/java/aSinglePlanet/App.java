@@ -1,9 +1,9 @@
-package assignment2;
+package aSinglePlanet;
 
 /**
  * A program for the planet task.
  */
-public class PlanetTask {
+public class App {
   /**
    * Instantiates two Planet objects and prints their information.
    */
