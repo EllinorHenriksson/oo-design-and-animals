@@ -80,11 +80,11 @@ public abstract class Animal {
     return weight;
   }
 
-/**
- * Sets the weight of the animal.
- *
- * @param weight The weight (must be larger than 0, or it will be set to 0.0).
- */
+  /**
+   * Sets the weight of the animal.
+   *
+   * @param weight The weight (must be larger than 0, or it will be set to 0.0).
+   */
   public void setWeight(double weight) {
     if (weight > 0.0) {
       this.weight = weight;
@@ -127,7 +127,7 @@ public abstract class Animal {
   @Override
   public String toString() {
     return name + " (" + latinName 
-        + "):\nWeight: " + weight
-        + "\nSound: " + sound;
+        + "):\n  Weight: " + weight + "kg"
+        + "\n  Sound: " + sound;
   }
 }

@@ -29,7 +29,7 @@ public class Reptile extends Animal {
    * @return The habitat.
    */
   public String getHabitat() {
-      return habitat;
+    return habitat;
   }
 
   /**
@@ -52,12 +52,12 @@ public class Reptile extends Animal {
    * @return True if it is.
    */
   public boolean isPoisonous() {
-      return isPoisonous;
+    return isPoisonous;
   }
 
   /**
    * Returns a string representing the sound the reptile makes.
-   * 
+   *
    * @return A string of the sound.
    */
   @Override
@@ -72,8 +72,8 @@ public class Reptile extends Animal {
    */
   @Override
   public String toString() {
-      return super.toString()
-          + "\nHabitat: " + habitat
-          + "\nIs poisonous: " + isPoisonous;
+    return super.toString()
+        + "\n  Habitat: " + habitat
+        + "\n  Is poisonous: " + isPoisonous;
   }
 }

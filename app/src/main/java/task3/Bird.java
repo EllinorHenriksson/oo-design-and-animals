@@ -19,7 +19,8 @@ public class Bird extends Animal {
    * @param canFly True if the bird can fly.
    * @param nestType The nest type of the bird.
    */
-  public Bird(String name, String latinName, double weight, String sound, boolean isMigrant, boolean canFly, String nestType) {
+  public Bird(String name, String latinName, double weight, String sound, 
+      boolean isMigrant, boolean canFly, String nestType) {
     super(name, latinName, weight, sound);
     this.isMigrant = isMigrant;
     this.canFly = canFly;
@@ -69,7 +70,7 @@ public class Bird extends Animal {
 
   /**
    * Returns a string representing the sound the bird makes.
-   * 
+   *
    * @return A string of the sound.
    */
   @Override
@@ -84,9 +85,9 @@ public class Bird extends Animal {
    */
   @Override
   public String toString() {
-      return super.toString() 
-          + "\nIs migrant: " + isMigrant
-          + "\nCan fly: " + canFly
-          + "\nNest type: " + nestType;
+    return super.toString() 
+        + "\n  Is migrant: " + isMigrant
+        + "\n  Can fly: " + canFly
+        + "\n  Nest type: " + nestType;
   }
 }

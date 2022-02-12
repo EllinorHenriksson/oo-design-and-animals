@@ -57,7 +57,7 @@ public class Mammal extends Animal {
 
   /**
    * Returns a string representing the sound the mammal makes.
-   * 
+   *
    * @return A string of the sound.
    */
   @Override
@@ -72,8 +72,8 @@ public class Mammal extends Animal {
    */
   @Override
   public String toString() {
-      return super.toString()
-          + "\nFur color: " + furColor
-          + "\nHas winter fur: " + hasWinterFur;
+    return super.toString()
+        + "\n  Fur color: " + furColor
+        + "\n  Has winter fur: " + hasWinterFur;
   }
 }
