@@ -16,10 +16,10 @@ public class Planet {
   /**
    * Initializing constructor.
    *
-   * @param name       - The name.
-   * @param position   - The position.
-   * @param aphelion   - The aphelion.
-   * @param perihelion - The perihelion.
+   * @param name The name.
+   * @param position The position.
+   * @param aphelion The aphelion.
+   * @param perihelion The perihelion.
    */
   public Planet(String name, int position, int noOfMoons, int aphelion, int perihelion) {
     setName(name);
@@ -42,7 +42,7 @@ public class Planet {
   /**
    * Sets the name of the planet.
    *
-   * @param newName - The name (must be at least 2 characters long, or 'name' will be set to 'Invalid').
+   * @param newName The name (must not be null or shorter than 2 characters, or it will be set to 'Invalid').
    */
   public void setName(String newName) {
     if (newName == null || newName.length() < 2) {
@@ -65,7 +65,7 @@ public class Planet {
   /**
    * Sets the position of the planet.
    *
-   * @param newPos - The position (must be 1-9, or 'position' will be set to 0).
+   * @param newPos The position (must be 1-9, or it will be set to 0).
    */
   public void setPosition(int newPos) {
     if (newPos > 0 && newPos < 10) {
@@ -88,7 +88,7 @@ public class Planet {
   /**
    * Sets the number of moons of the planet. N.B. Not the same as the length of 'moons'!
    *
-   * @param newCount - The number of moons (must be 0 or more, or 'noOfMoons' will be set to 0).
+   * @param newCount The number of moons (must be 0 or more, or it will be set to 0).
    */
   public void setNoOfMoons(int newCount) {
     if (newCount < 0) {
@@ -111,7 +111,7 @@ public class Planet {
   /**
    * Sets the aphelion of the planet.
    *
-   * @param newAphelion - The aphelion (must be larger than 0, or 'aphelion' will be set to 0).
+   * @param newAphelion The aphelion (must be larger than 0, or it will be set to 0).
    */
   public void setAphelion(int newAphelion) {
     if (newAphelion > 0) {
@@ -134,7 +134,7 @@ public class Planet {
   /**
    * Sets the perihelion of the planet.
    *
-   * @param newPerihelion - The perihelion (must be larger than 0, or 'perihelion' will be set to 0).
+   * @param newPerihelion The perihelion (must be larger than 0, or it will be set to 0).
    */
   public void setPerihelion(int newPerihelion) {
     if (newPerihelion > 0) {
@@ -148,7 +148,7 @@ public class Planet {
   /**
    * Adds a moon to the planet.
    *
-   * @param newMoon - The moon (must be a unique object with a unique name).
+   * @param newMoon The moon (must be a unique object with a unique name).
    */
   public void addMoon(Moon newMoon) {
     boolean isUnique = true;

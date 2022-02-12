@@ -12,10 +12,10 @@ public abstract class Animal {
   /**
    * Initializing constructor.
    *
-   * @param name - The name of the animal.
-   * @param latinName - The latin name of the animal.
-   * @param weight - The weight of the animal.
-   * @param sound - The sound of the animal.
+   * @param name The name of the animal.
+   * @param latinName The latin name of the animal.
+   * @param weight The weight of the animal.
+   * @param sound The sound of the animal.
    */
   Animal(String name, String latinName, double weight, String sound) {
     setName(name);
@@ -36,14 +36,14 @@ public abstract class Animal {
   /**
    * Sets the name of the animal.
    *
-   * @param newName - The name (must not be null or shorter than 2 characters, or 'name' will be set to 'Invalid').
+   * @param name The name (must not be null or shorter than 2 characters, or it will be set to 'Invalid').
    */
-  public void setName(String newName) {
-    if (newName == null || newName.length() < 2) {
+  public void setName(String name) {
+    if (name == null || name.length() < 2) {
       System.out.println("Invalid name, will be set to 'Invalid'.");
-      name = "Invalid";
+      this.name = "Invalid";
     } else {
-      name = newName;
+      this.name = name;
     }
   }
 
@@ -60,14 +60,14 @@ public abstract class Animal {
   /**
    * Sets the latin name of the animal. 
    *
-   * @param newLatinName - The latin name (must not be null or shorter than 2 characters, or 'latinName' will be set to 'Invalid').
+   * @param latinName The latin name (must not be null or shorter than 2 characters, or it will be set to 'Invalid').
    */
-  public void setLatinName(String newLatinName) {
-    if (newLatinName == null || newLatinName.length() < 2) {
+  public void setLatinName(String latinName) {
+    if (latinName == null || latinName.length() < 2) {
       System.out.println("Invalid latin name, will be set to 'Invalid'.");
-      latinName = "Invalid";
+      this.latinName = "Invalid";
     } else {
-      latinName = newLatinName;
+      this.latinName = latinName;
     }
   }
 
@@ -83,14 +83,14 @@ public abstract class Animal {
 /**
  * Sets the weight of the animal.
  *
- * @param newWeight - The weight (must be larger than 0, or 'weight' will be set to 0.0).
+ * @param weight The weight (must be larger than 0, or it will be set to 0.0).
  */
-  public void setWeight(double newWeight) {
-    if (newWeight > 0.0) {
-      weight = newWeight;
+  public void setWeight(double weight) {
+    if (weight > 0.0) {
+      this.weight = weight;
     } else {
       System.out.println("Weight must be larger than zero, will be set to 0.0.");
-      weight = 0.0;
+      this.weight = 0.0;
     }
   }
 
@@ -106,16 +106,28 @@ public abstract class Animal {
   /**
    * Sets the sound of the animal.
    *
-   * @param newSound - The sound (if null, 'sound' will be set to '*silent*').
+   * @param sound The sound (if null, 'sound' will be set to '*silent*').
    */
-  public void setSound(String newSound) {
-    if (newSound == null) {
+  public void setSound(String sound) {
+    if (sound == null) {
       System.out.println("No sound was given, will be set to '*silent*'.");
-      sound = "*silent*";
+      this.sound = "*silent*";
     } else {
-      sound = newSound;
+      this.sound = sound;
     }
   }
 
   public abstract String makeSound();
+
+  /**
+   * Returns a string representing the animal.
+   *
+   * @return A string representation.
+   */
+  @Override
+  public String toString() {
+    return name + " (" + latinName 
+        + "):\nWeight: " + weight
+        + "\nSound: " + sound;
+  }
 }

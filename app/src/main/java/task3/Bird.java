@@ -11,13 +11,13 @@ public class Bird extends Animal {
   /**
    * Initializing constructor.
    *
-   * @param name - The name of the bird.
-   * @param latinName - The latin name of the bird.
-   * @param weight - The weight of the bird.
-   * @param sound - The sound of the bird.
-   * @param isMigrant - True if bird is migrant.
-   * @param canFly - True if bird can fly.
-   * @param nestType - The nest type of the bird.
+   * @param name The name of the bird.
+   * @param latinName The latin name of the bird.
+   * @param weight The weight of the bird.
+   * @param sound The sound of the bird.
+   * @param isMigrant True if the bird is migrant.
+   * @param canFly True if the bird can fly.
+   * @param nestType The nest type of the bird.
    */
   public Bird(String name, String latinName, double weight, String sound, boolean isMigrant, boolean canFly, String nestType) {
     super(name, latinName, weight, sound);
@@ -27,20 +27,20 @@ public class Bird extends Animal {
   }
 
   /**
-   * Gets if the bird is migrant.
+   * Checks if the bird is migrant.
    *
-   * @return True if migrant.
+   * @return True if it is.
    */
-  public boolean getIsMigrant() {
+  public boolean isMigrant() {
     return isMigrant;
   }
 
   /**
-   * Gets if the bird can fly.
+   * Checks if the bird can fly.
    *
-   * @return True if able to fly.
+   * @return True if it can.
    */
-  public boolean getCanFly() {
+  public boolean canFly() {
     return canFly;
   }
 
@@ -56,13 +56,14 @@ public class Bird extends Animal {
   /**
    * Sets the nest type of the bird.
    *
-   * @param newNestType - The nest type (must not be null or shorter than 2 characters, or 'nestType' will be set to 'Invalid').
+   * @param nestType The nest type (must not be null or shorter than 2 characters, or it will be set to 'Invalid').
    */
-  public void setNestType(String newNestType) {
-    if (newNestType == null || newNestType.length() < 2) {
+  public void setNestType(String nestType) {
+    if (nestType == null || nestType.length() < 2) {
       System.out.println("Invalid nest type, will be set to 'Invalid'.");
+      this.nestType = "Invalid";
     } else {
-      nestType = newNestType;
+      this.nestType = nestType;
     }
   }
 
@@ -74,5 +75,18 @@ public class Bird extends Animal {
   @Override
   public String makeSound() {
     return "A " + super.getName() + " tweets: " + sound; 
+  }
+
+  /**
+   * Returns a string representing the bird.
+   *
+   * @return A string representation.
+   */
+  @Override
+  public String toString() {
+      return super.toString() 
+          + "\nIs migrant: " + isMigrant
+          + "\nCan fly: " + canFly
+          + "\nNest type: " + nestType;
   }
 }

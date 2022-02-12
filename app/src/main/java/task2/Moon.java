@@ -10,8 +10,8 @@ public class Moon {
   /**
    * Initializing constructor.
    *
-   * @param name - The name of the moon.
-   * @param kmSize - The diameter of the moon (in km).
+   * @param name The name of the moon.
+   * @param kmSize The diameter of the moon (in km).
    */
   public Moon(String name, int kmSize) {
     this.name = name;
