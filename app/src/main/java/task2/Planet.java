@@ -42,8 +42,7 @@ public class Planet {
   /**
    * Sets the name of the planet.
    *
-   * @param newName - The name (must be at least 2 characters long, or 'name' will
-   *                be set to 'Invalid').
+   * @param newName - The name (must be at least 2 characters long, or 'name' will be set to 'Invalid').
    */
   public void setName(String newName) {
     if (newName == null || newName.length() < 2) {
@@ -66,14 +65,14 @@ public class Planet {
   /**
    * Sets the position of the planet.
    *
-   * @param newPos - The position (must be 1-9, or 'position' will keep its
-   *               original value).
+   * @param newPos - The position (must be 1-9, or 'position' will be set to 0).
    */
   public void setPosition(int newPos) {
     if (newPos > 0 && newPos < 10) {
       position = newPos;
     } else {
-      System.out.println("Invalid planet position.");
+      System.out.println("Invalid planet position, will be set to 0.");
+      position = 0;
     }
   }
 
@@ -89,12 +88,12 @@ public class Planet {
   /**
    * Sets the number of moons of the planet. N.B. Not the same as the length of 'moons'!
    *
-   * @param newCount - The number of moons (must be 0 or more, or 'noOfMoons' will
-   *                 keep its original value).
+   * @param newCount - The number of moons (must be 0 or more, or 'noOfMoons' will be set to 0).
    */
   public void setNoOfMoons(int newCount) {
     if (newCount < 0) {
-      System.out.println("Invalid number of moons.");
+      System.out.println("Invalid number of moons, will be set to 0.");
+      noOfMoons = 0;
     } else {
       noOfMoons = newCount;
     }
@@ -112,14 +111,14 @@ public class Planet {
   /**
    * Sets the aphelion of the planet.
    *
-   * @param newAphelion - The aphelion (must be larger than 0, or 'aphelion' will
-   *                    keep its original value).
+   * @param newAphelion - The aphelion (must be larger than 0, or 'aphelion' will be set to 0).
    */
   public void setAphelion(int newAphelion) {
     if (newAphelion > 0) {
       aphelion = newAphelion;
     } else {
-      System.out.println("Invalid aphelion.");
+      System.out.println("Invalid aphelion, will be set to 0.");
+      aphelion = 0;
     }
   }
 
@@ -135,14 +134,14 @@ public class Planet {
   /**
    * Sets the perihelion of the planet.
    *
-   * @param newPerihelion - The perihelion (must be larger than 0, or 'perihelion'
-   *                      will keep its original value).
+   * @param newPerihelion - The perihelion (must be larger than 0, or 'perihelion' will be set to 0).
    */
   public void setPerihelion(int newPerihelion) {
     if (newPerihelion > 0) {
       perihelion = newPerihelion;
     } else {
-      System.out.println("Invalid perihelion.");
+      System.out.println("Invalid perihelion, will be set to 0.");
+      perihelion = 0;
     }
   }
 
