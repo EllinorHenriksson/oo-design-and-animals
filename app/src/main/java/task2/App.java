@@ -18,12 +18,13 @@ public class App {
     Planet[] planets = {earth, mars};
 
     for (Planet p : planets) {
-      System.out.println("\nThe planet is called " + p.getName() + " and has the following moons:");
+      System.out.println("The planet is called " + p.getName() + " and has the following moons:");
       Moon[] moons = p.getMoons();
       for (int i = 0; i < moons.length; i++) {
         System.out.println("  Moon " + (i + 1) + " is called " + moons[i].getName()
             + " (" + moons[i].getSizeInKm() + "km)");
       }
+      System.out.println("\n");
     }
   }
 }

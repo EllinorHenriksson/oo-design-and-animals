@@ -18,7 +18,7 @@ public class App {
           + "\n  Moons: " + p.getNoOfMoons()
           + "\n  Aphelion: " + p.getAphelion() + " km"
           + "\n  Perihelion: " + p.getPerihelion() + " km";
-      System.out.println(representation);
+      System.out.println(representation + "\n");
     }
   }
 }
