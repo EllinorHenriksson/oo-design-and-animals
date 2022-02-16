@@ -5,7 +5,7 @@ package task3;
  */
 public class App {
   /**
-   * Instantiates one Bird, one Mammal and one Reptile object and prints their information in different ways.
+   * Instantiates one Bird, one Mammal and one Reptile object and prints their information in three different ways.
    */
   public static void main(String[] args) {
     try {
@@ -15,10 +15,10 @@ public class App {
 
       Animal[] animals = {canadaGoose, grizzlyBear, blackMamba};
 
-      // Printing information using toString()
+      // Printing information using toString().
       System.out.println("--------------- toString() ---------------");
       for (Animal a : animals) {
-        System.out.println(a.toString() + "\n");
+        System.out.println(a + "\n");
       }
 
       // Printing information using getters.

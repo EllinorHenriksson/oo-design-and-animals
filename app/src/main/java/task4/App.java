@@ -8,8 +8,8 @@ import java.util.Collections;
  */
 public class App {
   /**
-   * Creates an array list of Animal objects, sorts them in 
-   * lexicographical order (latin name) and prints their information.
+   * Creates an array list of Animal objects, sorts them in lexicographical order (latin name)
+   * and prints their information in two different ways.
    */
   public static void main(String[] args) {
     try {
@@ -25,8 +25,27 @@ public class App {
   
       Collections.sort(animals);
   
+      // Printing information using instanceof and downcasting
+      System.out.println("--------------- instanceof/downcasting ---------------");
       for (Animal a : animals) {
-        System.out.println(a.toString());
+        String text = a.getLatinName();
+        if (a instanceof Bird) {
+          Bird bird = (Bird) a;
+          text += " lays its eggs on/in " + bird.getNestType();
+        } else if (a instanceof Mammal) {
+          Mammal mammal = (Mammal) a;
+          text += " has a fur that is " + mammal.getFurColor();
+        } else if (a instanceof Reptile) {
+          Reptile reptile = (Reptile) a;
+          text += " lives in " + reptile.getHabitat();
+        }
+        System.out.println(text);
+      }
+
+      // Printing information using toString()
+      System.out.println("--------------- toString() ---------------");
+      for (Animal a : animals) {
+        System.out.println(a);
       }
     } catch (Exception e) {
       e.printStackTrace();
