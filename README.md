@@ -26,3 +26,11 @@ The results of the build process will be shown to you, and you can dig deeper by
 
 ## Adding existing code
 If you have already worked on the task in whole or part using your own gradle setup we reccomend that you copy only the source code files into this structure. Your source code should be copied into the `app/src/main/java/` folder and you can change the `application` `mainClass` in `build.gradle` accordingly.
+
+## Comments on assignment from student
+
+### Part one
+
+#### Task 4
+In task 4, the instructions say that you should check what type the objects are and then print information depending on the type. However, since the array list is declared as the type Animal, it is not possible to call the class-specific methods of the subclasses. Therefore I chose to override the toString() method in both the superclass and the subclasses, and call it for each Animal objcet in the array list.
+

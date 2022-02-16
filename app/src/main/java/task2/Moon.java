@@ -14,8 +14,8 @@ public class Moon {
    * @param kmSize The diameter of the moon (in km).
    */
   public Moon(String name, int kmSize) {
-    this.name = name;
-    this.kmSize = kmSize;
+    setName(name);
+    setSizeInKm(kmSize);
   }
 
   /**
@@ -28,11 +28,37 @@ public class Moon {
   }
 
   /**
+   * Sets the name of the moon.
+   *
+   * @param newName The name (must not be null or shorter than 2 characters, or an exception will be thrown).
+   */
+  public void setName(String newName) {
+    if (newName == null || newName.length() < 2) {
+      throw new IllegalArgumentException("Invalid moon name, must not be null or shorter than 2 characters.");
+    } else {
+      name = newName;
+    }
+  }
+
+  /**
    * Gets the diameter of the moon (in km).
    *
    * @return The diameter.
    */
   public int getSizeInKm() {
     return kmSize;
+  }
+
+  /**
+   * Sets the diameter of the moon (in km).
+   *
+   * @param newKmSize The diameter (must be larger than 0, or an exception will be thrown).
+   */
+  public void setSizeInKm(int newKmSize) {
+    if (newKmSize > 0) {
+      kmSize = newKmSize;
+    } else {
+      throw new IllegalArgumentException("Invalid diameter, must be larger than 0.");
+    }
   }
 }

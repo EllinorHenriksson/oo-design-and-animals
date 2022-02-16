@@ -42,12 +42,11 @@ public class Planet {
   /**
    * Sets the name of the planet.
    *
-   * @param newName The name (must not be null or shorter than 2 characters, or it will be set to 'Invalid').
+   * @param newName The name (must not be null or shorter than 2 characters, or an exception will be thrown).
    */
   public void setName(String newName) {
     if (newName == null || newName.length() < 2) {
-      System.out.println("Invalid planet name, will be set to 'Invalid'.");
-      this.name = "Invalid";
+      throw new IllegalArgumentException("Invalid planet name, must not be null or shorter than two characters.");
     } else {
       name = newName;
     }
@@ -65,14 +64,13 @@ public class Planet {
   /**
    * Sets the position of the planet.
    *
-   * @param newPos The position (must be 1-9, or it will be set to 0).
+   * @param newPos The position (must be 1-9, or an exception will be thrown).
    */
   public void setPosition(int newPos) {
     if (newPos > 0 && newPos < 10) {
       position = newPos;
     } else {
-      System.out.println("Invalid planet position, will be set to 0.");
-      position = 0;
+      throw new IllegalArgumentException("Invalid planet position, must be within the range 1-9.");
     }
   }
 
@@ -88,12 +86,11 @@ public class Planet {
   /**
    * Sets the number of moons of the planet. N.B. Not the same as the length of 'moons'!
    *
-   * @param newCount The number of moons (must be 0 or more, or it will be set to 0).
+   * @param newCount The number of moons (must be 0 or more, or an exception will be thrown).
    */
   public void setNoOfMoons(int newCount) {
     if (newCount < 0) {
-      System.out.println("Invalid number of moons, will be set to 0.");
-      noOfMoons = 0;
+      throw new IllegalArgumentException("Invalid number of moons, must be 0 or more.");
     } else {
       noOfMoons = newCount;
     }
@@ -111,14 +108,13 @@ public class Planet {
   /**
    * Sets the aphelion of the planet.
    *
-   * @param newAphelion The aphelion (must be larger than 0, or it will be set to 0).
+   * @param newAphelion The aphelion (must be larger than 0, or an exception will be thrown).
    */
   public void setAphelion(int newAphelion) {
     if (newAphelion > 0) {
       aphelion = newAphelion;
     } else {
-      System.out.println("Invalid aphelion, will be set to 0.");
-      aphelion = 0;
+      throw new IllegalArgumentException("Invalid aphelion, must be larger than 0.");
     }
   }
 
@@ -134,21 +130,20 @@ public class Planet {
   /**
    * Sets the perihelion of the planet.
    *
-   * @param newPerihelion The perihelion (must be larger than 0, or it will be set to 0).
+   * @param newPerihelion The perihelion (must be larger than 0, or an exception will be thrown).
    */
   public void setPerihelion(int newPerihelion) {
     if (newPerihelion > 0) {
       perihelion = newPerihelion;
     } else {
-      System.out.println("Invalid perihelion, will be set to 0.");
-      perihelion = 0;
+      throw new IllegalArgumentException("Invalid perihelion, must be larger than 0.");
     }
   }
 
   /**
    * Adds a moon to the planet.
    *
-   * @param newMoon The moon (must be a unique object with a unique name).
+   * @param newMoon The moon (must be a unique object with a unique name, or an exception will be thrown).
    */
   public void addMoon(Moon newMoon) {
     boolean isUnique = true;
@@ -162,7 +157,7 @@ public class Planet {
       moons.add(newMoon);
       noOfMoons = moons.size();
     } else {
-      System.out.println("Moon already added to planet.");
+      throw new IllegalArgumentException("Moon already added to planet.");
     }
   }
 
