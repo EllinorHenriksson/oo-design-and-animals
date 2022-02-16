@@ -36,12 +36,11 @@ public abstract class Animal {
   /**
    * Sets the name of the animal.
    *
-   * @param name The name (must not be null or shorter than 2 characters, or it will be set to 'Invalid').
+   * @param name The name (must not be null or shorter than 2 characters, or an exception will be thrown).
    */
   public void setName(String name) {
     if (name == null || name.length() < 2) {
-      System.out.println("Invalid name, will be set to 'Invalid'.");
-      this.name = "Invalid";
+      throw new IllegalArgumentException("Invalid name, must not be null or shorter than 2 characters.");
     } else {
       this.name = name;
     }
@@ -60,12 +59,11 @@ public abstract class Animal {
   /**
    * Sets the latin name of the animal. 
    *
-   * @param latinName The latin name (must not be null or shorter than 2 characters, or it will be set to 'Invalid').
+   * @param latinName The latin name (must not be null or shorter than 2 characters, or an exception will be thrown).
    */
   public void setLatinName(String latinName) {
     if (latinName == null || latinName.length() < 2) {
-      System.out.println("Invalid latin name, will be set to 'Invalid'.");
-      this.latinName = "Invalid";
+      throw new IllegalArgumentException("Invalid latin name, must not be null or shorter than 2 characters.");
     } else {
       this.latinName = latinName;
     }
@@ -83,14 +81,13 @@ public abstract class Animal {
   /**
    * Sets the weight of the animal.
    *
-   * @param weight The weight (must be larger than 0, or it will be set to 0.0).
+   * @param weight The weight (must be larger than 0, or an exception will be thrown).
    */
   public void setWeight(double weight) {
     if (weight > 0.0) {
       this.weight = weight;
     } else {
-      System.out.println("Weight must be larger than zero, will be set to 0.0.");
-      this.weight = 0.0;
+      throw new IllegalArgumentException("Weight must be larger than 0.0.");
     }
   }
 
@@ -106,12 +103,11 @@ public abstract class Animal {
   /**
    * Sets the sound of the animal.
    *
-   * @param sound The sound (if null, 'sound' will be set to '*silent*').
+   * @param sound The sound (must not be null, or an exception will be thrown).
    */
   public void setSound(String sound) {
     if (sound == null) {
-      System.out.println("No sound was given, will be set to '*silent*'.");
-      this.sound = "*silent*";
+      throw new IllegalArgumentException("Sound must not be null.");
     } else {
       this.sound = sound;
     }

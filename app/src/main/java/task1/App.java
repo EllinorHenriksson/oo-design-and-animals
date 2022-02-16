@@ -22,7 +22,6 @@ public class App {
         System.out.println(representation + "\n");
       }
     } catch (Exception e) {
-      System.out.println(e);
       e.printStackTrace();
     }
   }

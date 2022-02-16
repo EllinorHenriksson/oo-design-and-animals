@@ -8,28 +8,32 @@ public class App {
    * Instantiates one Bird, one Mammal and one Reptile object and prints their information in different ways.
    */
   public static void main(String[] args) {
-    Bird canadaGoose = new Bird("Canada goose", "Branta canadensis", 3.9, "Honk honk honk", true, true, "On ground");
-    Mammal grizzlyBear = new Mammal("Grizzly bear", "Ursus arctos horribilis", 270.0, "Roaaar!", "Brown", true);
-    Reptile blackMamba = new Reptile("Black mamba", "Dendroaspis polylepis", 1.03, "Zzzzzzzzz", "Dry lowlands", true);
+    try {
+      Bird canadaGoose = new Bird("Canada goose", "Branta canadensis", 3.9, "Honk honk honk", true, true, "On ground");
+      Mammal grizzlyBear = new Mammal("Grizzly bear", "Ursus arctos horribilis", 270.0, "Roaaar!", "Brown", true);
+      Reptile blackMamba = new Reptile("Black mamba", "Dendroaspis polylepis", 1.03, "Zzzzzzzzz", "Dry lowlands", true);
 
-    Animal[] animals = {canadaGoose, grizzlyBear, blackMamba};
+      Animal[] animals = {canadaGoose, grizzlyBear, blackMamba};
 
-    // Printing information using toString()
-    System.out.println("--------------- toString() ---------------");
-    for (Animal a : animals) {
-      System.out.println(a.toString() + "\n");
-    }
+      // Printing information using toString()
+      System.out.println("--------------- toString() ---------------");
+      for (Animal a : animals) {
+        System.out.println(a.toString() + "\n");
+      }
 
-    // Printing information using getters.
-    System.out.println("--------------- getters ---------------");
-    System.out.println(getGeneralInfo(canadaGoose) + getSpecificInfo(canadaGoose) + "\n");
-    System.out.println(getGeneralInfo(grizzlyBear) + getSpecificInfo(grizzlyBear) + "\n");
-    System.out.println(getGeneralInfo(blackMamba) + getSpecificInfo(blackMamba) + "\n");
-    
-    // Using method makeSound().
-    System.out.println("--------------- makeSound() ---------------");
-    for (Animal a : animals) {
-      System.out.println(a.makeSound());
+      // Printing information using getters.
+      System.out.println("--------------- getters ---------------");
+      System.out.println(getGeneralInfo(canadaGoose) + getSpecificInfo(canadaGoose) + "\n");
+      System.out.println(getGeneralInfo(grizzlyBear) + getSpecificInfo(grizzlyBear) + "\n");
+      System.out.println(getGeneralInfo(blackMamba) + getSpecificInfo(blackMamba) + "\n");
+      
+      // Using method makeSound().
+      System.out.println("--------------- makeSound() ---------------");
+      for (Animal a : animals) {
+        System.out.println(a.makeSound());
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
     }
   }
 

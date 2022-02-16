@@ -35,12 +35,11 @@ public class Mammal extends Animal {
   /**
    * Sets the fur color of the mammal.
    *
-   * @param furColor The fur color (must not be null or shorter than 2 characters, or it will be set to 'Invalid').
+   * @param furColor The fur color (must not be null or shorter than 2 characters, or an exception will be thrown).
    */
   public void setFurColor(String furColor) {
     if (furColor == null || furColor.length() < 2) {
-      System.out.println("Invalid fur color, will be set to 'Invalid'.");
-      this.furColor = "Invalid";
+      throw new IllegalArgumentException("Invalid fur color, must not be null or shorter than 2 characters.");
     } else {
       this.furColor = furColor;
     }

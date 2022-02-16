@@ -57,12 +57,11 @@ public class Bird extends Animal {
   /**
    * Sets the nest type of the bird.
    *
-   * @param nestType The nest type (must not be null or shorter than 2 characters, or it will be set to 'Invalid').
+   * @param nestType The nest type (must not be null or shorter than 2 characters, or an exception will be thrown).
    */
   public void setNestType(String nestType) {
     if (nestType == null || nestType.length() < 2) {
-      System.out.println("Invalid nest type, will be set to 'Invalid'.");
-      this.nestType = "Invalid";
+      throw new IllegalArgumentException("Invaid nest type, must not be null or shorter than 2 characters.");
     } else {
       this.nestType = nestType;
     }

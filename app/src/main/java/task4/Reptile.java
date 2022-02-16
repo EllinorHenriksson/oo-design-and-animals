@@ -35,12 +35,11 @@ public class Reptile extends Animal {
   /**
    * Sets the habitat of the reptile.
    *
-   * @param habitat The habitat (if null or shorter than 2 characters, it will be set to 'Invalid').
+   * @param habitat The habitat (must not be null or shorter than 2 characters, or an exception will be thrown).
    */
   public void setHabitat(String habitat) {
     if (habitat == null || habitat.length() < 2) {
-      System.out.println("Invalid habitat, will be set to 'Invalid'.");
-      this.habitat = habitat;
+      throw new IllegalArgumentException("Invalid habitat, must not be null or shorter than 2 characters.");
     } else {
       this.habitat = habitat;
     }     

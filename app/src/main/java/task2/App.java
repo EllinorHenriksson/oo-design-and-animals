@@ -28,7 +28,6 @@ public class App {
         System.out.println("\n");
       }
     } catch (Exception e) {
-      System.out.println(e);
       e.printStackTrace();
     }
   }
